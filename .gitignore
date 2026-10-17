@@ -1,0 +1,33 @@
+# Keil MDK (uVision) 编译产物
+Objects/
+Listings/
+*.axf
+*.map
+*.lnp
+*.htm
+*.dep
+*.iex
+*.crf
+*.o
+*.d
+*.elf
+*.bak
+*.lora
+
+# Keil 工程用户个性化配置（含本机路径与窗口布局，不应入库）
+*.uvguix.*
+*.uvgui.*
+
+# JLINK / 调试器日志
+JLinkLog.txt
+JLinkSettings.ini
+
+# 常见编辑器与系统文件
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# MCU 固件二进制（按需放开）
+# *.hex

@@ -41,7 +41,7 @@ int main(void)
     // 4. 开启全局中断
     __enable_irq();
 	
-	tLoRaSettings stting={435000000,20,7,12,1,0x0005};	//频率435M，功率20dbm，带宽125kHz，SF=12，误码编码率4/5,前导码长度0x0005
+	tLoRaSettings stting={433000000,20,7,12,1,0x0005};	//频率433M，功率20dbm，带宽125kHz，SF=12，误码编码率4/5,前导码长度0x0005
 	SysTick_Config(SystemCoreClock/1000);
 	printf("version:%s\r\n",VERSION);
 	g_Radio.Init(&stting);	//初始化配置

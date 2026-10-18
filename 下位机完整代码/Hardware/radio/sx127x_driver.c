@@ -25,13 +25,13 @@ static uint8_t u8_SFList[]={RFLR_MODEMCONFIG2_SF_6,RFLR_MODEMCONFIG2_SF_7,RFLR_M
 static uint8_t u8_CRList[]={RFLR_MODEMCONFIG1_CODINGRATE_4_5,RFLR_MODEMCONFIG1_CODINGRATE_4_6,RFLR_MODEMCONFIG1_CODINGRATE_4_7,RFLR_MODEMCONFIG1_CODINGRATE_4_8};
 static uint8_t u8_BWList[]={RFLR_MODEMCONFIG1_BW_7_81_KHZ,RFLR_MODEMCONFIG1_BW_10_41_KHZ,RFLR_MODEMCONFIG1_BW_15_62_KHZ,RFLR_MODEMCONFIG1_BW_20_83_KHZ,RFLR_MODEMCONFIG1_BW_31_25_KHZ,RFLR_MODEMCONFIG1_BW_41_66_KHZ,RFLR_MODEMCONFIG1_BW_62_50_KHZ,RFLR_MODEMCONFIG1_BW_125_KHZ,RFLR_MODEMCONFIG1_BW_250_KHZ,RFLR_MODEMCONFIG1_BW_500_KHZ};
 static uint32_t softTimeout=DEFAUTL_TIMEOUT;	//软件超时时间(这个使用systick计时的，单位是1systick)
-static tLoRaSettings localSettingSave={435000000,20,7,7,1,0x000f};	//本地保存的配置信息，用于在复位后重新初始化
+static tLoRaSettings localSettingSave={433000000,20,7,7,1,0x000f};	//本地保存的配置信息，用于在复位后重新初始化
 volatile static tRFLRStates  loraStatus=RFLR_STATE_IDLE;	//当前射频状态机(不是返回给用户的tRFProcessReturnCodes，这个比用户给用户的状态多)
 
 /**
  * 初始化LoRa配置函数
  * 参数
- *     stting：配置结构体，传入需要设置的参数，eg{435000000,20,8,7,1}，具体内容查看 tLoRaSettings 定义,如果传入NULL，表示加载上次的设置(上次没有就加载默认设置)
+ *     stting：配置结构体，传入需要设置的参数，eg{433000000,20,8,7,1}，具体内容查看 tLoRaSettings 定义,如果传入NULL，表示加载上次的设置(上次没有就加载默认设置)
  */
 void sx127xInit(tLoRaSettings *stting){
 	SX1276HALInit();
